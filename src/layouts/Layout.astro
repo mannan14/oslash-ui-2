@@ -4,6 +4,8 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+
+import '/public/style/index.css'
 ---
 
 <!DOCTYPE html>
@@ -15,21 +17,46 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="overflow-hidden">
+		<!-- <div class="flex h-screen">
+			<LeftNavigation  client:load/>
+
+			<div class="flex flex-1 flex-col h-full">
+				<Navigation client:load />
+
+				<div class="flex flex-1 h-full overflow-hidden">
+					<slot/>
+				</div>
+			</div>
+			
+		</div> -->
+		<div class="flex h-screen bg-red-100">
+			<div class="w-[56px] bg-gray-100">
+				<!-- Side Nav -->
+			</div>
+		  
+			<div class="flex flex-1 flex-col bg-green-300">
+				<header class="sticky top-0 h-[48px] w-full border-b border-gray-200 bg-white">
+					<!-- Header -->
+				</header>
+		  
+				<div class="flex flex-1">
+					<div class="flex h-full w-[248px] items-center justify-center border-r border-gray-200 bg-white">
+						<!-- Left Side Panel -->
+					</div>
+					<div class="flex flex-1 flex-col bg-gray-50">
+						<!-- <div class="flex h-[92px] items-center px-6">
+							Folder Header
+						</div> -->
+						<div class="flex h-full w-full  bg-white">
+							<slot/>
+						</div>
+					</div>
+					<div class="flex h-full w-[248px] items-center justify-center bg-gray-50">
+						<!-- Right Side Panel -->
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
