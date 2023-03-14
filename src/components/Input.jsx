@@ -7,9 +7,9 @@ export default function Input(props){
         className ='flex flex-row w-1/2 h-10 border rounded-lg focus-within:border focus-within:border-[#6366F1]'>
                 
             {
-            props.StartAddon 
+            props.startAddon 
             ? 
-            props.StartAddon
+            props.startAddon
             :
             null
             } 
