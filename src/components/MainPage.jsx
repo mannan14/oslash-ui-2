@@ -4,6 +4,8 @@ import toast, {Toaster} from 'react-hot-toast'
 import Input from "./Input";
 import Button from "./Button";
 import RadioButton from "./RadioButton";
+import FileUpload from "./FileUpload";
+import MenuDropdown from "./MenuDropdown";
 
 const datas = [
     {
@@ -14,6 +16,10 @@ const datas = [
     },
 ]
 
+const folder_data = ["Salman's Folder","o/sal","o/pro",]
+
+const staleness_data = ['Every week','Every day','Every hour']
+
 export default function MainPage(){
     let [inputValue, setInputValue] = useState('')
 
@@ -22,7 +28,12 @@ export default function MainPage(){
             position:'bottom-right',
         });
     }
-
+    const handleChange = function(e) {
+            e.preventDefault();
+            if (e.target.files && e.target.files[0]) {
+            handleFile(e.target.files);
+            }
+        }
 
     return (
         <div className="p-2 w-full">
@@ -41,7 +52,23 @@ export default function MainPage(){
                 </Button>
                 <Toaster/>
             </div>
+
             <RadioButton datas={datas} label='FileType'/>
+            <FileUpload onChange={handleChange}/>
+
+            <div className="flex flex-row mt-4 space-x-8 justify-between">
+                <MenuDropdown 
+                label='Select a folder'
+                name="Salman's Folder"
+                icon={<img src="/assets/folder.svg" alt="" className="" />}
+                data={folder_data}/>
+
+                <MenuDropdown 
+                label='Staleness'
+                name="Every Week"
+                icon={<img src="/assets/bell.svg" alt="" className="" />}
+                data={staleness_data}/>
+            </div>
         </div>
     )
 }
