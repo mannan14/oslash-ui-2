@@ -10,7 +10,6 @@ export default function MenuDropdown(props){
                     ({ open }) => (
                         <div className="">
                             <Menu.Button 
-                                as="div"
                                 className={`${open 
                                     ? `border-indigo-600`
                                     : `border-[#D1D5DB]`
@@ -41,19 +40,19 @@ export default function MenuDropdown(props){
                                 >   
                                     <div className="p-2 space-y-1 h-36 overflow-y-auto">
                                         {
-                                            props.data.map((val) => 
+                                            props.data.map((val,index) => 
                                             (   
-                                                <div key={val} className=''>
-                                                    <Menu.Item>
-                                                        {({active}) => (
-                                                            <div className={`${active ? 'bg-blue-100 ' : ' '} hover:bg-gray-100 focus:bg-blue-100 hover:cursor-pointer active:bg-blue-100 rounded-lg`}>
-                                                                <div className='p-2'>
-                                                                    {val}
-                                                                </div>
-                                                            </div>
-                                                        )}
-                                                    </Menu.Item>
-                                                </div>
+                                                <Menu.Item key={index}>
+                                                    {({active}) => (
+                                                        <button
+                                                        className={`${active ? 'bg-gray-100 ' : ' '} ${val.isActive ? ' bg-blue-100' : ''} ${(val.isActive && active) ? ' bg-blue-200' : ''} p-2 w-full text-left hover:bg-gray-100 focus:bg-blue-100 hover:cursor-pointer active:bg-blue-100 rounded-lg`}
+                                                        onClick = {val.onClick}
+                                                        >
+                                                        
+                                                            {val.folder_name}
+                                                        </button>
+                                                    )}
+                                                </Menu.Item>
                                             ))
                                         } 
                                     </div>

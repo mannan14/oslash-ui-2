@@ -16,9 +16,41 @@ const datas = [
     },
 ]
 
-const folder_data = ["Salman's Folder","o/sal","o/pro",]
+const folder_data = [
+    {
+        folder_name:"Salman's Folder",
+        onClick: '',
+        isActive: true,
+    },
+    {
+        folder_name:"o/sal",
+        onClick: '',
+        isActive: false,
+    },
+    {
+        folder_name:"o/pro",
+        onClick: '',
+        isActive: false,
+    }
+]
 
-const staleness_data = ['Every week','Every day','Every hour']
+const staleness_data = [
+    {
+        folder_name:"Every week",
+        onClick:'',
+        isActive: true,
+    },
+    {
+        folder_name:"Every day",
+        onClick:'',
+        isActive: false,
+    },
+    {
+        folder_name:"Every hour",
+        onClick:'',
+        isActive: false,
+    }
+]
 
 export default function MainPage(){
     let [inputValue, setInputValue] = useState('')
