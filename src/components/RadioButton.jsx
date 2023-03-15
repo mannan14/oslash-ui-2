@@ -22,13 +22,11 @@ export default function RadioButton(props){
                             >   
                                 {({checked}) => (
 
-                                    <div  className='flex space-x-3.5 items-center focus:outline-none cursor-pointer'>
-                                        <span className={`${checked ? 'bg-indigo-600' : ' border border-gray-500'} flex items-center justify-center w-4 h-4 rounded-full`}>
-                                            <div className='w-1 h-1 bg-white rounded-full'></div>
+                                    <div  className='flex font-medium text-gray-900 text-sm items-center focus:outline-none cursor-pointer'>
+                                        <span className={`${checked ? 'bg-indigo-600' : ' border border-gray-500'} flex mr-2 items-center justify-center w-4 h-4 rounded-full`}>
+                                            <span className='w-1 h-1 bg-white rounded-full'></span>
                                         </span>
-                                        <p className=" font-medium text-gray-900 text-sm">
-                                            {data.name}
-                                        </p>
+                                        {data.name}
                                     </div>
 
                                 )}

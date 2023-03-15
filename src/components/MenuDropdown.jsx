@@ -3,8 +3,8 @@ import { Menu, Transition, } from "@headlessui/react";
 
 export default function MenuDropdown(props){
     return(
-        <div className="w-full space-y-2">
-            <p className="">{props.label}</p>
+        <div className="w-full space-y-1">
+            <p className="text-gray-900 font-medium text-sm overflow-hidden whitespace-nowrap text-ellipsis">{props.label}</p>
             <Menu>
             {
                     ({ open }) => (
@@ -13,11 +13,13 @@ export default function MenuDropdown(props){
                                 className={`${open 
                                     ? `border-indigo-600`
                                     : `border-[#D1D5DB]`
-                                    } flex h-9 p-2 w-full justify-between items-center rounded-lg border border-solid focus:outline-none`
+                                    } flex h-9 p-2 w-full justify-between items-center rounded-lg border border-solid overflow-hidden whitespace-nowrap text-ellipsis focus:outline-none`
                                     }>
-                                <span className="flex space-x-2">
+                                <span className="flex w-full space-x-2">
                                     {props.icon}
-                                    <p className="text-[#111827]">{props.name}</p>
+                                    <span className="text-[#111827] overflow-hidden whitespace-nowrap text-ellipsis">
+                                        {props.name}
+                                    </span>
                                 </span>
                                 <svg xmlns="http://www.w3.org/2000/svg" 
                                 className={`${open ? `rotate-180 `: ` ` } h-5 w-5 p-1 text-gray-900`} viewBox="0 0 20 20" fill="currentColor">
@@ -45,7 +47,7 @@ export default function MenuDropdown(props){
                                                 <Menu.Item key={index}>
                                                     {({active}) => (
                                                         <button
-                                                        className={`${active ? 'bg-gray-100 ' : ' '} ${val.isActive ? ' bg-blue-100' : ''} ${(val.isActive && active) ? ' bg-blue-200' : ''} p-2 w-full text-left hover:bg-gray-100 focus:bg-blue-100 hover:cursor-pointer active:bg-blue-100 rounded-lg`}
+                                                        className={`${active ? 'bg-gray-100 ' : ' '} ${val.isActive ? ' bg-blue-100' : ''} ${(val.isActive && active) ? ' bg-blue-200 hover:bg-blue-200' : ''} p-2 w-full text-left hover:bg-gray-100 focus:bg-blue-100 hover:cursor-pointer active:bg-blue-100 rounded-lg`}
                                                         onClick = {val.onClick}
                                                         >
                                                         
