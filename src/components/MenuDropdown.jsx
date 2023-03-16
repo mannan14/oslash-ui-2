@@ -3,8 +3,8 @@ import { Menu, Transition, } from "@headlessui/react";
 
 export default function MenuDropdown(props){
     return(
-        <div className="w-full space-y-1">
-            <p className="text-gray-900 font-medium text-sm overflow-hidden whitespace-nowrap text-ellipsis">{props.label}</p>
+        <>
+            <p className="text-gray-900 pb-1 font-medium text-sm truncate">{props.label}</p>
             <Menu>
             {
                     ({ open }) => (
@@ -13,20 +13,20 @@ export default function MenuDropdown(props){
                                 className={`${open 
                                     ? `border-indigo-600`
                                     : `border-[#D1D5DB]`
-                                    } flex h-9 p-2 w-full justify-between items-center rounded-lg border border-solid overflow-hidden whitespace-nowrap text-ellipsis focus:outline-none`
+                                    } flex h-9 p-2
+                                     justify-between items-center w-full rounded-lg border border-solid focus:outline-none`
                                     }>
-                                <span className="flex w-full space-x-2">
+                                <p className="flex w-full truncate items-center">
                                     {props.icon}
-                                    <span className="text-[#111827] overflow-hidden whitespace-nowrap text-ellipsis">
-                                        {props.name}
+                                    <span className="truncate leading-none pl-2">
+                                        <span className="text-[#111827]">{props.name}</span>
                                     </span>
-                                </span>
+                                </p>
                                 <svg xmlns="http://www.w3.org/2000/svg" 
-                                className={`${open ? `rotate-180 `: ` ` } h-5 w-5 p-1 text-gray-900`} viewBox="0 0 20 20" fill="currentColor">
+                                className={`${open ? `rotate-180 `: ` ` } h-5 w-5 py-1 mx-1 text-gray-900`} viewBox="0 0 20 20" fill="currentColor">
                                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
                             </Menu.Button>
-                            
                             
                             <Transition
                             as={Fragment}
@@ -47,10 +47,9 @@ export default function MenuDropdown(props){
                                                 <Menu.Item key={index}>
                                                     {({active}) => (
                                                         <button
-                                                        className={`${active ? 'bg-gray-100 ' : ' '} ${val.isActive ? ' bg-blue-100' : ''} ${(val.isActive && active) ? ' bg-blue-200 hover:bg-blue-200' : ''} p-2 w-full text-left hover:bg-gray-100 focus:bg-blue-100 hover:cursor-pointer active:bg-blue-100 rounded-lg`}
+                                                        className={`${val.isActive ? ' bg-blue-100 hover:bg-blue-200' : ''} ${active ? val.isActive ? 'hover:bg-blue-200' : ' hover:bg-gray-100 bg-gray-100' : ''}${(val.isActive && active) ? ' bg-blue-200 hover:bg-blue-200 ' : ''} p-2 text-left w-full focus:bg-blue-100 hover:cursor-pointer active:bg-blue-100 rounded-lg`}
                                                         onClick = {val.onClick}
-                                                        >
-                                                        
+                                                        > 
                                                             {val.folder_name}
                                                         </button>
                                                     )}
@@ -64,6 +63,7 @@ export default function MenuDropdown(props){
                     )
                 } 
             </Menu>
-        </div>
+        </>
+        // ${val.isActive ? ' bg-blue-100' : ''} ${active ? val.isActive ? 'bg-blue-200' : ' hover:bg-gray-100 ' : 'hover:bg-gray-100 '}
     )
 }
