@@ -40,7 +40,7 @@ export default function FileUpload(props){
     // }
 
     return(
-        <div className="flex items-center relative text-center justify-center w-full mt-8 rounded-lg border-dashed border-2 border-gray-300">
+        <div className="flex items-center relative text-center justify-center w-full rounded-lg border-dashed border-2 border-gray-300">
             {/* onChange={handleChange} ref={inputRef}*/}
             <input className="hidden"  type="file" id="input-file-upload" multiple={true} onChange={props.onChange} />
             

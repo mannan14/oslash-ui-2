@@ -68,17 +68,17 @@ export default function MainPage(){
         }
 
     return (
-        <div className="p-2 w-full">
-            <div className="flex w-full">
-                <div className="w-1/2">
-                    <Input
-                    startAddon={<span className="flex rounded-l-lg items-center justify-center text-lg leading-6 font-medium text-gray-500 w-[42px] bg-slate-100 pointer-events-none">o/</span>}
-                    placeholder='Name'
-                    onChange={(e) => setInputValue(e.target.value)}
-                    value={inputValue}
-                    />
-                </div>
-                <div className="w-1/2">
+        <div className="p-2 w-full space-y-4">
+            <div className="space-y-8">
+                <div className="flex w-full">
+                    <div className="w-1/2">
+                        <Input
+                        startAddon={<span className="flex rounded-l-lg items-center justify-center text-lg leading-6 font-medium text-gray-500 w-[42px] bg-slate-100 pointer-events-none">o/</span>}
+                        placeholder='Name'
+                        onChange={(e) => setInputValue(e.target.value)}
+                        value={inputValue}
+                        />
+                    </div>
                     <Button 
                     colorScheme='outline'  
                     onClick={handleButtonPressed}
@@ -86,31 +86,28 @@ export default function MainPage(){
                         Save
                     </Button>
                 </div>
+
+                <RadioButton datas={datas} label='FileType'/>
+
+                <FileUpload onChange={handleChange}/>
             </div>
-            <Toaster/>
-
-            <RadioButton datas={datas} label='FileType'/>
-            <FileUpload onChange={handleChange}/>
-
-            <div className="flex w-full mt-4 justify-between">
-                <div className="w-1/2 pr-3">
-                    <div className="w-full">
-                        <MenuDropdown 
-                        label='Select a folder'
-                        name="Salman's Folder"
-                        icon={<img src="/assets/folder.svg" alt="" className="" />}
-                        data={folder_data}/>
-                    </div>
+                <Toaster/>
+            
+            <div className="flex w-full">
+                <div className="w-1/2 pr-6">
+                    <MenuDropdown 
+                    label='Select a folder'
+                    name="Salman's Folder"
+                    icon={<img src="/assets/folder.svg" alt="" className="" />}
+                    data={folder_data}/>
                 </div>
 
-                <div className="w-1/2 pl-3  ">
-                    <div className="w-full">
-                        <MenuDropdown 
-                        label='Staleness'
-                        name="Every Week"
-                        icon={<img src="/assets/bell.svg" alt="" className="" />}
-                        data={staleness_data}/>
-                    </div>
+                <div className="w-1/2 pl-6">
+                    <MenuDropdown 
+                    label='Staleness'
+                    name="Every Week"
+                    icon={<img src="/assets/bell.svg" alt="" className="" />}
+                    data={staleness_data}/>
                 </div>
             </div>
         </div>

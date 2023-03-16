@@ -3,7 +3,7 @@ import { Menu, Transition, } from "@headlessui/react";
 
 export default function MenuDropdown(props){
     return(
-        <>
+        <div className="flex flex-col">
             <p className="text-gray-900 pb-1 font-medium text-sm truncate">{props.label}</p>
             <Menu>
             {
@@ -13,19 +13,22 @@ export default function MenuDropdown(props){
                                 className={`${open 
                                     ? `border-indigo-600`
                                     : `border-[#D1D5DB]`
-                                    } flex h-9 p-2
-                                     justify-between items-center w-full rounded-lg border border-solid focus:outline-none`
-                                    }>
-                                <p className="flex w-full truncate items-center">
+                                    } flex h-9 p-2 items-center justify-between w-full rounded-lg border border-solid focus:outline-none`
+                                    }
+                                >
+
+                                <div className="flex min-w-0 items-center">
                                     {props.icon}
-                                    <span className="truncate leading-none pl-2">
+                                    <span className="truncate pl-2">
                                         <span className="text-[#111827]">{props.name}</span>
                                     </span>
-                                </p>
+                                </div>
+
                                 <svg xmlns="http://www.w3.org/2000/svg" 
                                 className={`${open ? `rotate-180 `: ` ` } h-5 w-5 py-1 mx-1 text-gray-900`} viewBox="0 0 20 20" fill="currentColor">
                                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
+
                             </Menu.Button>
                             
                             <Transition
@@ -63,7 +66,6 @@ export default function MenuDropdown(props){
                     )
                 } 
             </Menu>
-        </>
-        // ${val.isActive ? ' bg-blue-100' : ''} ${active ? val.isActive ? 'bg-blue-200' : ' hover:bg-gray-100 ' : 'hover:bg-gray-100 '}
+        </div>
     )
 }

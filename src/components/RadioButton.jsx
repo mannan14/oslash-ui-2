@@ -7,7 +7,7 @@ export default function RadioButton(props){
     let [selected, setSelected] = useState(props.datas[0]) 
 
     return (
-        <div className=" pt-8">
+        <div className="">
             <RadioGroup value={selected} onChange={setSelected}>
                 <RadioGroup.Label className=' sr-only'>
                     {props.label}

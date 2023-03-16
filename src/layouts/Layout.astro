@@ -18,45 +18,32 @@ import '/public/style/index.css'
 		<title>{title}</title>
 	</head>
 	<body class="overflow-hidden">
-		<!-- <div class="flex h-screen">
-			<LeftNavigation  client:load/>
-
-			<div class="flex flex-1 flex-col h-full">
-				<Navigation client:load />
-
-				<div class="flex flex-1 h-full overflow-hidden">
-					<slot/>
-				</div>
-			</div>
-			
-		</div> -->
-		<div class="flex h-screen bg-red-100">
+		<!-- <div class="flex h-screen bg-red-100">
 			<div class="w-[56px] bg-gray-100">
-				<!-- Side Nav -->
+				
 			</div>
 		  
-			<div class="flex flex-1 flex-col bg-green-300">
+			<div class="flex flex-1 flex-col">
 				<header class="sticky top-0 h-[48px] w-full border-b border-gray-200 bg-white">
-					<!-- Header -->
+					
 				</header>
 		  
 				<div class="flex flex-1">
 					<div class="flex h-full w-[248px] items-center justify-center border-r border-gray-200 bg-white">
-						<!-- Left Side Panel -->
+						
 					</div>
 					<div class="flex flex-1 flex-col bg-gray-50">
-						<!-- <div class="flex h-[92px] items-center px-6">
-							Folder Header
-						</div> -->
+						
 						<div class="flex h-full w-full  bg-white">
 							<slot/>
 						</div>
 					</div>
 					<div class="flex h-full w-[248px] items-center justify-center bg-gray-50">
-						<!-- Right Side Panel -->
+						
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
+		<slot/>
 	</body>
 </html>
