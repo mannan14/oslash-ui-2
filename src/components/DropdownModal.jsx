@@ -88,7 +88,7 @@ export default function DropdownModal(props){
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className=' w-[408px] max-h-full my-16 transform rounded-lg bg-white p-11 space-y-8 text-left shadow-md transition-all'>
+                                <Dialog.Panel className=' w-[408px] my-16 h-full transform rounded-lg bg-white p-11 space-y-8 text-left shadow-md transition-all'>
                                     <Dialog.Title
                                         as="h3"
                                         className=' text-3xl flex items-center justify-center font-semibold text-gray-900'
@@ -102,7 +102,7 @@ export default function DropdownModal(props){
                                         placeholder="Fix ETA"
                                         className="w-full h-10 p-2 font-medium text-gray-900 text-lg border border-gray-300 rounded-lg placeholder:text-gray-500 focus:outline-none focus:border-indigo-500 active:outline-none"/>
 
-                                        <div className="flex flex-col w-full max-h-60 overflow-y-auto ">
+                                        <div className="flex flex-col w-full max-h-72 overflow-y-auto ">
                                             <p className="text-gray-400 font-normal text-sm mb-2 text-left">Add possible values for the condition</p>
                                             
                                             <div className="space-y-4 w-full">
