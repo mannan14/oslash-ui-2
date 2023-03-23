@@ -17,33 +17,24 @@ import '/public/style/index.css'
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="overflow-hidden">
-		<!-- <div class="flex h-screen bg-red-100">
+	<body class="">
+		<div class="flex h-screen bg-red-100">
 			<div class="w-[56px] bg-gray-100">
 				
 			</div>
 		  
-			<div class="flex flex-1 flex-col">
-				<header class="sticky top-0 h-[48px] w-full border-b border-gray-200 bg-white">
-					
-				</header>
+			<div class="flex flex-1 flex-col min-w-0">
+			  <header class="sticky top-0 flex-shrink-0 h-[48px] w-full border-b border-gray-200 bg-white">
+				
+			</header>
 		  
-				<div class="flex flex-1">
-					<div class="flex h-full w-[248px] items-center justify-center border-r border-gray-200 bg-white">
-						
-					</div>
-					<div class="flex flex-1 flex-col bg-gray-50">
-						
-						<div class="flex h-full w-full  bg-white">
-							<slot/>
-						</div>
-					</div>
-					<div class="flex h-full w-[248px] items-center justify-center bg-gray-50">
-						
-					</div>
+			<div class="flex flex-1 h-full">
+				<div class="flex h-full w-[248px] items-center flex-shrink-0 justify-center border-r border-gray-200 bg-white">
+				  
 				</div>
+				<slot/>
 			</div>
-		</div> -->
-		<slot/>
+			</div>
+		</div>
 	</body>
 </html>

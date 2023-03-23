@@ -6,53 +6,11 @@ import Button from "./Button";
 import RadioButton from "./RadioButton";
 import FileUpload from "./FileUpload";
 import MenuDropdown from "./MenuDropdown";
+import Dropdown from "./Dropdown";
 
-const datas = [
-    {
-        name:'Content'
-    },
-    {
-        name: 'Email Attachment'
-    },
-]
-
-const folder_data = [
-    {
-        folder_name:"Salman's Folder",
-        onClick: '',
-        isActive: true,
-    },
-    {
-        folder_name:"o/sal",
-        onClick: '',
-        isActive: false,
-    },
-    {
-        folder_name:"o/pro",
-        onClick: '',
-        isActive: false,
-    }
-]
-
-const staleness_data = [
-    {
-        folder_name:"Every week",
-        onClick:'',
-        isActive: true,
-    },
-    {
-        folder_name:"Every day",
-        onClick:'',
-        isActive: false,
-    },
-    {
-        folder_name:"Every hour",
-        onClick:'',
-        isActive: false,
-    }
-]
 
 export default function MainPage(){
+    
     let [inputValue, setInputValue] = useState('')
 
     function handleButtonPressed(){
@@ -68,6 +26,7 @@ export default function MainPage(){
         }
 
     return (
+        <>
         <div className="p-2 w-full space-y-4">
             <div className="space-y-8">
                 <div className="flex w-full">
@@ -87,11 +46,18 @@ export default function MainPage(){
                     </Button>
                 </div>
 
-                <RadioButton datas={datas} label='FileType'/>
+                <RadioButton datas={[
+                                {
+                                    name:'Content'
+                                },
+                                {
+                                    name: 'Email Attachment'
+                                },
+                            ]} 
+                            label='FileType'/>
 
                 <FileUpload onChange={handleChange}/>
             </div>
-                <Toaster/>
             
             <div className="flex w-full">
                 <div className="w-1/2 pr-6">
@@ -99,7 +65,23 @@ export default function MainPage(){
                     label='Select a folder'
                     name="Salman's Folder"
                     icon={<img src="/assets/folder.svg" alt="" className="" />}
-                    data={folder_data}/>
+                    data={[
+                        {
+                            folder_name:"Salman's Folder",
+                            onClick: () => toast.success('Click Salman Folder'),
+                            isActive: true,
+                        },
+                        {
+                            folder_name:"o/sal",
+                            onClick: () => toast.success('Click o/sal'),
+                            isActive: false,
+                        },
+                        {
+                            folder_name:"o/pro",
+                            onClick: () => toast.success('Click o/pro'),
+                            isActive: false,
+                        }
+                    ]}/>
                 </div>
 
                 <div className="w-1/2 pl-6">
@@ -107,9 +89,31 @@ export default function MainPage(){
                     label='Staleness'
                     name="Every Week"
                     icon={<img src="/assets/bell.svg" alt="" className="" />}
-                    data={staleness_data}/>
+                    data={[
+                        {
+                            folder_name:"Every week",
+                            onClick:"",
+                            isActive: true,
+                        },
+                        {
+                            folder_name:"Every day",
+                            onClick:'',
+                            isActive: false,
+                        },
+                        {
+                            folder_name:"Every hour",
+                            onClick:'',
+                            isActive: false,
+                        }
+                    ]}/>
                 </div>
             </div>
+
+            <Toaster position="bottom-right" />
         </div>
+        <div className="flex h-full w-[248px] flex-shrink-0 items-center justify-center bg-gray-50">
+				<Dropdown name={'Dropdown'} isNew={true}/>
+		</div>
+        </>
     )
 }

@@ -1,10 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MainPage from '../components/MainPage';
+
 const pageTitle = 'Oslash'
 ---
 
 <Layout title={pageTitle}>
-	<MainPage client:load/>
+	<div class="overflow-y-auto w-full bg-gray-50">
+		<div class="flex h-full w-full flex-shrink-0 bg-white">
+			<MainPage client:load/>
+		</div>
+	</div>
 </Layout>
-<!-- <MainPage folderValue={snippet[0].foldername} user={snippet[0].folders} client:load/> -->
