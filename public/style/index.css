@@ -5,3 +5,26 @@
 
 /* space grotest font */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+@tailwind base;
+@tailwind components;
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #b4b4b4; 
+    border-radius:0.5rem;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #929292; 
+  }
+@tailwind utilities;
