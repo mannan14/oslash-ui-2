@@ -8,7 +8,7 @@ import Button from '../components/Button'
 
 export default function DropdownModal(props){
     
-    let [isOpen, setIsOpen] = useState(true)
+    let [isOpen, setIsOpen] = useState(false)
     const inputArr = [
         {
             type:'text',
@@ -105,20 +105,20 @@ export default function DropdownModal(props){
                                         <div className="flex flex-col w-full max-h-72 overflow-y-auto overflow-x-hidden">
                                             <p className="text-gray-400 font-normal text-sm mb-2 text-left">Add possible values for the condition</p>
                                             
-                                            <div className="space-y-4 w-full">
+                                            <ul className="space-y-4 w-full">
                                                 {
                                                     arr.map((item, i) => (
-                                                        <>
+                                                        <li key={i}>
                                                         <Input
                                                             startAddon={<span className="flex rounded-l-lg items-center justify-center text-lg font-medium text-gray-500 w-[42px] bg-slate-100 pointer-events-none">{i}</span>}
                                                             placeholder='Enter input'
                                                             id={i}
                                                             key={i}
                                                         />
-                                                        </>
+                                                        </li>
                                                     ))
                                                 }
-                                            </div>
+                                            </ul>
 
                                             <button 
                                             className="flex items-center mt-4 justify-center font-normal text-sm text-indigo-500 focus:outline-none"

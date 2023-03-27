@@ -7,7 +7,7 @@ import RadioButton from "./RadioButton";
 import FileUpload from "./FileUpload";
 import MenuDropdown from "./MenuDropdown";
 import Dropdown from "./Dropdown";
-
+import DescriptionButton from "./DescriptionButton";
 
 export default function MainPage(){
     
@@ -109,8 +109,12 @@ export default function MainPage(){
                 </div>
             </div>
 
+            <div className="">
+                <DescriptionButton />
+            </div>
             <Toaster position="bottom-right" />
         </div>
+        
         <div className="flex h-full w-[248px] flex-shrink-0 items-center justify-center bg-gray-50">
 				<Dropdown name={'Dropdown'} isNew={true}/>
 		</div>

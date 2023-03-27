@@ -2,10 +2,9 @@ import React from "react";
 
 
 export default function Button(props){
-
     return(
         <button 
-        className={`${props.colorScheme === 'outline' ? ' border-gray-900 text-gray-900 ' : ''} flex items-center justify-center rounded-lg border text-lg font-medium py-[6px] px-4 ml-auto focus:outline-none`}
+        className={`${props.colorScheme === 'outline' ? ' border-gray-900 text-gray-900 ' : ''} flex items-center justify-center rounded-lg border text-lg font-medium py-[6px] px-4 ml-auto focus:outline-none ${props.className}`}
         onClick={props.onClick}
         > 
             {props.children}
