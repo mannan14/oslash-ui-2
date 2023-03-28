@@ -12,7 +12,7 @@
 ::-webkit-scrollbar {
     width: 3px;
     position: absolute;
-    border-radius: 7px;
+    border-radius: 8px;
   }
   
   /* Track */
@@ -33,13 +33,30 @@
     background: #929292; 
   }
 
-  .custom-scrollbars__content {
-    overflow: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  
-  .custom-scrollbars__content::-webkit-scrollbar {
+  .oslash-tag-input-auto-suggestions::-webkit-scrollbar, ::-webkit-scrollbar {
     display: none;
+  }
+
+  .oslashSnippetEditor-scroll-bar::-webkit-scrollbar {
+    display: block;
+    width: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    background-color: rgb(255 255 255/1);  
+    background-color: transparent;
+  }
+
+  .oslashSnippetEditor-scroll-bar::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: rgb(229 231 235/1);
+  }
+
+  .oslashSnippetEditor-scroll-bar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(195, 195, 196);
+  }
+
+  .oslashSnippetEditor-scroll-bar::-webkit-scrollbar-track {
+    margin: 0.125rem 0;
+    --tw-bg-opacity: 1;
   }
 @tailwind utilities;
