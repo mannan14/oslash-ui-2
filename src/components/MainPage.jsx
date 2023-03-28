@@ -108,16 +108,15 @@ export default function MainPage(){
                     ]}/>
                 </div>
             </div>
-
-            <div className="">
-                <DescriptionButton />
-            </div>
-            <Toaster position="bottom-right" />
+            
+            <DescriptionButton />
         </div>
         
         <div className="flex h-full w-[248px] flex-shrink-0 items-center justify-center bg-gray-50">
 				<Dropdown name={'Dropdown'} isNew={true}/>
 		</div>
+        
+        <Toaster position="bottom-right" />
         </>
     )
 }

@@ -4,10 +4,10 @@ import DescriptionContent from "./DescriptionContent";
 
 export default function DescriptionButton(){
 
-    let [showdiv, setShowDiv] = useState(false)
+    let [showdiv, setShowDiv] = useState(true)
 
     return(
-        <>
+        <div className="">
         <h3 className=" text-gray-800 font-normal text-xs">Description</h3>
         {
             showdiv === true ?
@@ -22,9 +22,11 @@ export default function DescriptionButton(){
             )
             :
             (
-                <DescriptionContent/>
+                <div className="">
+                    <DescriptionContent/>
+                </div>
             )
         }
-        </>
+        </div>
     )
 }

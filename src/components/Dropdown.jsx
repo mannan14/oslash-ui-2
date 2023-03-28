@@ -5,8 +5,10 @@ import DropdownModal from "./DropdownModal";
 
 export default function Dropdown(props){
     return(
-        <div className=" p-2 space-y-2 w-full h-full focus:outline-none">
-            <h3 className="uppercase font-semibold text-gray-500 pt-14 text-xs">automations</h3>
+        <div className=" p-2 space-y-2 flex flex-col mr-auto h-full focus:outline-none">
+            <h3 className="uppercase font-semibold text-gray-500 pt-14 text-xs">
+                automations
+            </h3>
             <span className="flex flex-row items-center focus:outline-none">
                 <DropdownModal 
                 className='flex items-center  hover:cursor-pointer px-2 py-[2.5px] font-grotesk bg-indigo-50 border rounded-2xl border-indigo-500 text-sm font-normal text-indigo-500 focus:outline-none'

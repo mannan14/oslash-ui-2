@@ -8,13 +8,18 @@
 
 @tailwind base;
 @tailwind components;
+
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 3px;
+    position: absolute;
+    border-radius: 7px;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: inherit; 
+    border: none;
+    border-radius: 0px;
   }
    
   /* Handle */
@@ -26,5 +31,15 @@
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #929292; 
+  }
+
+  .custom-scrollbars__content {
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .custom-scrollbars__content::-webkit-scrollbar {
+    display: none;
   }
 @tailwind utilities;
