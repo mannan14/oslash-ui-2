@@ -38,7 +38,7 @@ export default function MenuDropdown(props){
                             leaveTo="transform opacity-0 scale-95"
                             >
                                 <Menu.Items
-                                    className={`absolute z-10 w-[320px] bg-white rounded-lg mt-2 shadow-md focus:outline-none`}
+                                    className={`absolute z-10 w-[460px] bg-white rounded-lg mt-2 shadow-md focus:outline-none`}
                                 >   
                                     <div className="p-2 space-y-1 h-36 overflow-y-auto">
                                         {
