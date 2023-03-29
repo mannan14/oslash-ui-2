@@ -36,11 +36,10 @@ export default function DescriptionLink(){
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
                 >
-                    <Menu.Items className="absolute right-0 mt-2 w-80 p-4 origin-top-right rounded-lg bg-white shadow-lg focus:outline-none">   
+                    <Menu.Items className="absolute z-80 right-0 mt-2 w-80 p-4 origin-top-right rounded-lg bg-white shadow-lg focus:outline-none">   
                         <input 
                         className="border border-gray-300 rounded-lg text-gray-900 p-2 w-full mb-4 placeholder:text-gray-400 focus:border-gray-500 focus:outline-none" 
                         placeholder="Link"/>
-                    
                         <Button 
                         colorScheme='outline'  
                         className=' text-sm py-2'
