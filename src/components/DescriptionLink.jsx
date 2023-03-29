@@ -5,6 +5,11 @@ import { Menu, Transition } from "@headlessui/react";
 import Button from '../components/Button'
 
 export default function DescriptionLink(){
+
+    function handleOnclick(){
+        console.log('Add Link pressed')
+    }
+
     return(
             <Menu as='div'>
                 <div className="absolute bottom-[1.65rem] right-2">
@@ -18,7 +23,7 @@ export default function DescriptionLink(){
                                     <img src="/assets/command.svg" className="" />
                                 </span>
                                 <span className="flex items-center justify-center bg-gray-500 rounded-sm  w-4 h-4 ml-1">K</span>
-                            </span>
+                            </span> 
                             }
                             >
                             <div className="bg-gray-100 w-6 h-6 flex items-center justify-center rounded-[4px] hover:cursor-pointer focus:outline-none">
@@ -37,41 +42,19 @@ export default function DescriptionLink(){
                 leaveTo="transform opacity-0 scale-95"
                 >
                     <Menu.Items className="absolute z-80 right-0 mt-2 w-80 p-4 origin-top-right rounded-lg bg-white shadow-lg focus:outline-none">   
-                        <input 
+                        <input
+                        type='text' 
                         className="border border-gray-300 rounded-lg text-gray-900 p-2 w-full mb-4 placeholder:text-gray-400 focus:border-gray-500 focus:outline-none" 
                         placeholder="Link"/>
                         <Button 
                         colorScheme='outline'  
                         className=' text-sm py-2'
-                        onClick={()=>{console.log('Add Link pressed')}}
+                        onClick={()=>handleOnclick()}
                         >
                             Add Link
                         </Button>                        
                     </Menu.Items>
                 </Transition>
             </Menu>
-                // <Menu>
-                //     <Menu.Button>
-                //     <div className="bg-gray-100 w-6 h-6 flex items-center justify-center rounded-[4px] hover:cursor-pointer focus:outline-none">
-                //         <img  src="/assets/link.svg" alt="" className="" />
-                //     </div>
-                //     </Menu.Button>
-                //     <Menu.Items>
-                //         <Menu.Item>
-                //         <input 
-                //         className="border border-gray-300 rounded-lg text-gray-900 p-2 w-full mb-4 placeholder:text-gray-400 focus:border-gray-500 focus:outline-none" 
-                //         placeholder="Link"/>
-                //         </Menu.Item>
-                //         <Menu.Item>
-                //         <Button 
-                //         colorScheme='outline'  
-                //         className=' text-sm py-2'
-                //         onClick={()=>{console.log('Add Link pressed')}}
-                //         >
-                //             Add Link
-                //         </Button>  
-                //         </Menu.Item>
-                //     </Menu.Items>
-                // </Menu>
     )
 } 
