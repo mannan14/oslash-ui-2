@@ -20,19 +20,17 @@ import '/public/style/index.css'
 	<body class="">
 		<div class="flex h-screen bg-red-100">
 			<div class="w-[56px] bg-gray-100">
-				
 			</div>
 		  
 			<div class="flex flex-1 flex-col min-w-0">
-			  <header class="sticky top-0 flex-shrink-0 h-[48px] w-full border-b border-gray-200 bg-white">
-				
-			</header>
-		  
-			<div class="flex flex-1 h-full overflow-hidden">
-				<div class="flex h-full w-[248px] items-center flex-shrink-0 justify-center border-r border-gray-200 bg-white">
+				<header class="sticky top-0 flex-shrink-0 h-[48px] w-full border-b border-gray-200 bg-white">
+				</header>
+	
+				<div class="flex h-full w-full overflow-hidden">
+					<div class="flex h-full w-[248px] items-center flex-shrink-0 justify-center border-r border-gray-200 bg-white">
+					</div>
+					<slot/>
 				</div>
-				<slot/>
-			</div>
 			</div>
 		</div>
 	</body>
